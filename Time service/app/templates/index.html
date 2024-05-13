@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Current Time</title>
+    <style>
+        .center {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 80vh; 
+        }
+    </style>
+</head>
+<body>
+    <div class="center">
+        <h2>Click the button below to save the current time</h2>
+        <!-- buttonze daclickebis mere gadava add-time-ze -->
+        <form method="post" action="{% url 'add_time' %}"> 
+            {% csrf_token %}
+            <button type="submit">Save Current Time</button>
+        </form>    
+        <a href="{% url 'add_time' %}">Click to see results without adding</a>
+    </div>
+</body>
+</html>
